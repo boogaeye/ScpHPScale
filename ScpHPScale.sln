@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30309.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScpHPScale-EXILED2", "ScpHPScale-EXILED2\ScpHPScale-EXILED2.csproj", "{B7241B3F-F2BD-4457-8ED1-1EBD66E12AEA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B7241B3F-F2BD-4457-8ED1-1EBD66E12AEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7241B3F-F2BD-4457-8ED1-1EBD66E12AEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7241B3F-F2BD-4457-8ED1-1EBD66E12AEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7241B3F-F2BD-4457-8ED1-1EBD66E12AEA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F89D65E4-06C7-4314-9D23-377697100E4D}
+	EndGlobalSection
+EndGlobal
