@@ -44,5 +44,10 @@ namespace ScpHPScale_EXILED2
         public float Scp939sHpCap { get; set; } = 2200;
         [Description("Sets The amount of HP to add to SCP939's per player")]
         public float Scp939sHpScaleAdd { get; set; } = 450;
+        [Description("Sets if a hint message is sent when HP is altered")]
+        public bool AllowHpAlterHintMessage { get; set; } = true;
+        [Description("Sets the hint message this can be used to tell people about their health")]
+        public string HpAlterHintMessage { get; set; } = "Your HP has been Changed to make the game fair";
+        public int HpAlterHintMessageDuration { get; set; } = 5;
     }
 }

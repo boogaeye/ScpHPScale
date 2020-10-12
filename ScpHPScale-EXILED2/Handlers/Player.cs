@@ -29,6 +29,10 @@ namespace ScpHPScale_EXILED2.Handlers
         {
             if (ev.RoleType == RoleType.Scp096 && ScpHPScale.instance.Config.Allow096HPScale)
             {
+                if (ScpHPScale.instance.Config.AllowHpAlterHintMessage)
+                {
+                    ev.Player.ShowHint(ScpHPScale.instance.Config.HpAlterHintMessage, ScpHPScale.instance.Config.HpAlterHintMessageDuration);
+                }
                 float count = PlayersJoins.Count;
                 ev.Player.Health = ScpHPScale.instance.Config.Scp096HpScaleAdd * count;
                 if (ev.Player.Health > ScpHPScale.instance.Config.Scp096HpCap)
@@ -38,6 +42,10 @@ namespace ScpHPScale_EXILED2.Handlers
             }
             if (ev.RoleType == RoleType.Scp93989 || ev.RoleType == RoleType.Scp93953 && ScpHPScale.instance.Config.Allow939HPScale)
             {
+                if (ScpHPScale.instance.Config.AllowHpAlterHintMessage)
+                {
+                    ev.Player.ShowHint(ScpHPScale.instance.Config.HpAlterHintMessage, ScpHPScale.instance.Config.HpAlterHintMessageDuration);
+                }
                 float count = PlayersJoins.Count;
                 ev.Player.Health = ScpHPScale.instance.Config.Scp939sHpScaleAdd * count;
                 if (ev.Player.Health > ScpHPScale.instance.Config.Scp939sHpCap)
@@ -47,6 +55,10 @@ namespace ScpHPScale_EXILED2.Handlers
             }
             if (ev.RoleType == RoleType.Scp173 && ScpHPScale.instance.Config.Allow173HPScale)
             {
+                if (ScpHPScale.instance.Config.AllowHpAlterHintMessage)
+                {
+                    ev.Player.ShowHint(ScpHPScale.instance.Config.HpAlterHintMessage, ScpHPScale.instance.Config.HpAlterHintMessageDuration);
+                }
                 float count = PlayersJoins.Count;
                 ev.Player.Health = ScpHPScale.instance.Config.Scp173HpScaleAdd * count;
                 if (ev.Player.Health > ScpHPScale.instance.Config.Scp173HpCap)
@@ -56,6 +68,10 @@ namespace ScpHPScale_EXILED2.Handlers
             }
             if (ev.RoleType == RoleType.Scp049 && ScpHPScale.instance.Config.Allow049HPScale)
             {
+                if (ScpHPScale.instance.Config.AllowHpAlterHintMessage)
+                {
+                    ev.Player.ShowHint(ScpHPScale.instance.Config.HpAlterHintMessage, ScpHPScale.instance.Config.HpAlterHintMessageDuration);
+                }
                 float count = PlayersJoins.Count;
                 ev.Player.Health = ScpHPScale.instance.Config.Scp049HpScaleAdd * count;
                 if (ev.Player.Health > ScpHPScale.instance.Config.Scp049HpCap)
@@ -65,6 +81,10 @@ namespace ScpHPScale_EXILED2.Handlers
             }
             if (ev.RoleType == RoleType.Scp0492 && ScpHPScale.instance.Config.Allow0492HPScale)
             {
+                if (ScpHPScale.instance.Config.AllowHpAlterHintMessage)
+                {
+                    ev.Player.ShowHint(ScpHPScale.instance.Config.HpAlterHintMessage, ScpHPScale.instance.Config.HpAlterHintMessageDuration);
+                }
                 float count = PlayersJoins.Count;
                 ev.Player.Health = ScpHPScale.instance.Config.Scp0492HpScaleAdd * count;
                 if (ev.Player.Health > ScpHPScale.instance.Config.Scp0492HpCap)
@@ -74,6 +94,10 @@ namespace ScpHPScale_EXILED2.Handlers
             }
             if (ev.RoleType == RoleType.Scp106 && ScpHPScale.instance.Config.Allow106HPScale)
             {
+                if (ScpHPScale.instance.Config.AllowHpAlterHintMessage)
+                {
+                    ev.Player.ShowHint(ScpHPScale.instance.Config.HpAlterHintMessage, ScpHPScale.instance.Config.HpAlterHintMessageDuration);
+                }
                 float count = PlayersJoins.Count;
                 ev.Player.Health = ScpHPScale.instance.Config.Scp106HpScaleAdd * count;
                 if (ev.Player.Health > ScpHPScale.instance.Config.Scp106HpCap)
@@ -86,6 +110,10 @@ namespace ScpHPScale_EXILED2.Handlers
         {
             if (ev.NewRole == RoleType.Scp096 && ScpHPScale.instance.Config.Allow096HPScale)
             {
+                if (ScpHPScale.instance.Config.AllowHpAlterHintMessage)
+                {
+                    ev.Player.ShowHint(ScpHPScale.instance.Config.HpAlterHintMessage, ScpHPScale.instance.Config.HpAlterHintMessageDuration);
+                }
                 float count = PlayersJoins.Count;
                 ev.Player.Health = ScpHPScale.instance.Config.Scp096HpScaleAdd * count;
                 if (ev.Player.Health > ScpHPScale.instance.Config.Scp096HpCap)
@@ -93,8 +121,12 @@ namespace ScpHPScale_EXILED2.Handlers
                     ev.Player.Health = ScpHPScale.instance.Config.Scp096HpCap;
                 }
             }
-            if (ev.NewRole == RoleType.Scp93989 || ev.NewRole == RoleType.Scp93953 && ScpHPScale.instance.Config.Allow096HPScale)
+            if (ev.NewRole == RoleType.Scp93989 || ev.NewRole == RoleType.Scp93953 && ScpHPScale.instance.Config.Allow939HPScale)
             {
+                if (ScpHPScale.instance.Config.AllowHpAlterHintMessage)
+                {
+                    ev.Player.ShowHint(ScpHPScale.instance.Config.HpAlterHintMessage, ScpHPScale.instance.Config.HpAlterHintMessageDuration);
+                }
                 float count = PlayersJoins.Count;
                 ev.Player.Health = ScpHPScale.instance.Config.Scp939sHpScaleAdd * count;
                 if (ev.Player.Health > ScpHPScale.instance.Config.Scp939sHpCap)
@@ -104,6 +136,10 @@ namespace ScpHPScale_EXILED2.Handlers
             }
             if (ev.NewRole == RoleType.Scp173 && ScpHPScale.instance.Config.Allow173HPScale)
             {
+                if (ScpHPScale.instance.Config.AllowHpAlterHintMessage)
+                {
+                    ev.Player.ShowHint(ScpHPScale.instance.Config.HpAlterHintMessage, ScpHPScale.instance.Config.HpAlterHintMessageDuration);
+                }
                 float count = PlayersJoins.Count;
                 ev.Player.Health = ScpHPScale.instance.Config.Scp173HpScaleAdd * count;
                 if (ev.Player.Health > ScpHPScale.instance.Config.Scp173HpCap)
@@ -113,6 +149,10 @@ namespace ScpHPScale_EXILED2.Handlers
             }
             if (ev.NewRole == RoleType.Scp049 && ScpHPScale.instance.Config.Allow049HPScale)
             {
+                if (ScpHPScale.instance.Config.AllowHpAlterHintMessage)
+                {
+                    ev.Player.ShowHint(ScpHPScale.instance.Config.HpAlterHintMessage, ScpHPScale.instance.Config.HpAlterHintMessageDuration);
+                }
                 float count = PlayersJoins.Count;
                 ev.Player.Health = ScpHPScale.instance.Config.Scp049HpScaleAdd * count;
                 if (ev.Player.Health > ScpHPScale.instance.Config.Scp049HpCap)
@@ -122,6 +162,10 @@ namespace ScpHPScale_EXILED2.Handlers
             }
             if (ev.NewRole == RoleType.Scp0492 && ScpHPScale.instance.Config.Allow0492HPScale)
             {
+                if (ScpHPScale.instance.Config.AllowHpAlterHintMessage)
+                {
+                    ev.Player.ShowHint(ScpHPScale.instance.Config.HpAlterHintMessage, ScpHPScale.instance.Config.HpAlterHintMessageDuration);
+                }
                 float count = PlayersJoins.Count;
                 ev.Player.Health = ScpHPScale.instance.Config.Scp0492HpScaleAdd * count;
                 if (ev.Player.Health > ScpHPScale.instance.Config.Scp0492HpCap)
@@ -131,6 +175,10 @@ namespace ScpHPScale_EXILED2.Handlers
             }
             if (ev.NewRole == RoleType.Scp106 && ScpHPScale.instance.Config.Allow106HPScale)
             {
+                if (ScpHPScale.instance.Config.AllowHpAlterHintMessage)
+                {
+                    ev.Player.ShowHint(ScpHPScale.instance.Config.HpAlterHintMessage, ScpHPScale.instance.Config.HpAlterHintMessageDuration);
+                }
                 float count = PlayersJoins.Count;
                 ev.Player.Health = ScpHPScale.instance.Config.Scp106HpScaleAdd * count;
                 if (ev.Player.Health > ScpHPScale.instance.Config.Scp106HpCap)
