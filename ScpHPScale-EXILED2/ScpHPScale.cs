@@ -14,6 +14,10 @@ namespace ScpHPScale_EXILED2
         private static readonly Lazy<ScpHPScale> LazyInstance = new Lazy<ScpHPScale>( valueFactory: () => new ScpHPScale());
         static public ScpHPScale instance => LazyInstance.Value;
         public override PluginPriority Priority { get; } = PluginPriority.First;
+        public override Version Version { get; } = new Version("2.0.0.1");
+        public override string Author { get; } = "BoogaEye";
+        public override string Name { get; } = "ScpHPScale";
+        public override Version RequiredExiledVersion { get; } = new Version(2, 1, 30);
         public EventHandlers EventHandlers;
         private ScpHPScale()
         {
