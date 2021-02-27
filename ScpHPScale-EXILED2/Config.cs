@@ -1,13 +1,12 @@
 ﻿using Exiled.API.Interfaces;
 using System.ComponentModel;
+using Exiled.Loader;
 
 namespace ScpHPScale_EXILED2
 {
     public class Config : IConfig
     {
         public bool IsEnabled { get; set; } = true;
-        [Description("Sets The delay to start up the health delay(This is here so that other plugins dont overlay the HP) this is in milliseconds (Tip: its probably best to keep the default as 1000 if your HP still doesnt change add 1000 and repeat...)")]
-        public int ScpHpDelay { get; set; } = 1000;
         [Description("Sets if SCP096 gets effected by the HP player scale")]
         public bool Allow096HPScale { get; set; } = true;
         [Description("Sets The max HP to cap SCP096 at")]
@@ -44,10 +43,5 @@ namespace ScpHPScale_EXILED2
         public float Scp939sHpCap { get; set; } = 2200;
         [Description("Sets The amount of HP to add to SCP939's per player")]
         public float Scp939sHpScaleAdd { get; set; } = 450;
-        [Description("Sets if a hint message is sent when HP is altered")]
-        public bool AllowHpAlterHintMessage { get; set; } = true;
-        [Description("Sets the hint message this can be used to tell people about their health")]
-        public string HpAlterHintMessage { get; set; } = "Your HP has been Changed to make the game fair";
-        public int HpAlterHintMessageDuration { get; set; } = 5;
     }
 }

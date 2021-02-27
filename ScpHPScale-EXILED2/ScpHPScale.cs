@@ -14,7 +14,7 @@ namespace ScpHPScale_EXILED2
         private static readonly Lazy<ScpHPScale> LazyInstance = new Lazy<ScpHPScale>( valueFactory: () => new ScpHPScale());
         static public ScpHPScale instance => LazyInstance.Value;
         public override PluginPriority Priority { get; } = PluginPriority.First;
-        private Handlers.Player player;
+        public EventHandlers EventHandlers;
         private ScpHPScale()
         {
 
@@ -27,11 +27,10 @@ namespace ScpHPScale_EXILED2
         private void RegisterEvents()
         {
             Log.Info("Registered");
-            player = new Handlers.Player();
-            Exiled.Events.Handlers.Player.ChangingRole += player.OnRoleChange;
-            Exiled.Events.Handlers.Player.Spawning += player.Spawn;
-            Exiled.Events.Handlers.Player.Joined += player.Join;
-            Exiled.Events.Handlers.Player.Left += player.Leave;
+            EventHandlers = new EventHandlers(this);
+            Exiled.Events.Handlers.Player.ChangingRole += EventHandlers.OnRoleChange;
+            Exiled.Events.Handlers.Player.Verified += EventHandlers.Join;
+            Exiled.Events.Handlers.Player.Destroying += EventHandlers.Leave;        
         }
 
         public override void OnDisabled()
@@ -41,10 +40,9 @@ namespace ScpHPScale_EXILED2
 
         private void UnregisterEvents()
         {
-            Exiled.Events.Handlers.Player.ChangingRole -= player.OnRoleChange;
-            Exiled.Events.Handlers.Player.Spawning -= player.Spawn;
-            Exiled.Events.Handlers.Player.Joined -= player.Join;
-            Exiled.Events.Handlers.Player.Left -= player.Leave;
+            Exiled.Events.Handlers.Player.ChangingRole -= EventHandlers.OnRoleChange;
+            Exiled.Events.Handlers.Player.Verified -= EventHandlers.Join;
+            Exiled.Events.Handlers.Player.Destroying -= EventHandlers.Leave;
         }
     }
 }
