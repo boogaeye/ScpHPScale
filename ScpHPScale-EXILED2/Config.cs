@@ -7,6 +7,9 @@ namespace ScpHPScale_EXILED2
     public class Config : IConfig
     {
         public bool IsEnabled { get; set; } = true;
+        public string hpChangeHint { get; set; } = "your HP changed to make the game more fair";
+        [Description("Sets the delay do not go under the default value as SCP hp's WONT change")]
+        public float Delay { get; set; } = 6.1f;
         [Description("Sets if SCP096 gets effected by the HP player scale")]
         public bool Allow096HPScale { get; set; } = true;
         [Description("Sets The max HP to cap SCP096 at")]

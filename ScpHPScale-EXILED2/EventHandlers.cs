@@ -5,14 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using Exiled.Events.EventArgs;
 using Exiled.API.Features;
+using MEC;
 
 namespace ScpHPScale_EXILED2
 {
     public class EventHandlers
     {
-        private readonly ScpHPScale plugin;
-        public EventHandlers(ScpHPScale scpHPScale) => this.plugin = plugin;
-        public Config config = ScpHPScale.instance.Config;
+        private readonly Plugin<Config> plugin;
+        public EventHandlers(Plugin<Config> plugin) => this.plugin = plugin;
         public List<Player> playerList = new List<Player>() { };
         public void Join(VerifiedEventArgs ev)
         {
@@ -24,120 +24,126 @@ namespace ScpHPScale_EXILED2
         }
         public void OnRoleChange(ChangingRoleEventArgs ev)
         {
-            Task.Delay(3000).ContinueWith(t => DelayedRoleChange(ev));
+            Timing.CallDelayed(this.plugin.Config.Delay, () => {
+                if (ev.Player.IsScp)
+                {
+                    ev.Player.ShowHint(this.plugin.Config.hpChangeHint, 5);
+                }
+                DelayedRoleChange(ev);
+            });
         }
         void DelayedRoleChange(ChangingRoleEventArgs ev)
         {
-            if (config.Allow0492HPScale && ev.Player.Role == RoleType.Scp0492)
+            if (this.plugin.Config.Allow0492HPScale && ev.Player.Role == RoleType.Scp0492)
             {
                 int hp = 0;
                 foreach (Player i in playerList)
                 {
                     hp++;
                 }
-                if (config.Scp0492HpCap > hp * config.Scp0492HpScaleAdd)
+                if (this.plugin.Config.Scp0492HpCap > hp * this.plugin.Config.Scp0492HpScaleAdd)
                 {
-                    ev.Player.Health = hp * config.Scp0492HpScaleAdd;
+                    ev.Player.Health = hp * this.plugin.Config.Scp0492HpScaleAdd;
                 }
                 else
                 {
-                    ev.Player.Health = config.Scp0492HpCap;
+                    ev.Player.Health = this.plugin.Config.Scp0492HpCap;
                 }
             }
-            if (config.Allow049HPScale && ev.Player.Role == RoleType.Scp049)
+            if (this.plugin.Config.Allow049HPScale && ev.Player.Role == RoleType.Scp049)
             {
                 int hp = 0;
                 foreach (Player i in playerList)
                 {
                     hp++;
                 }
-                if (config.Scp049HpCap > hp * config.Scp049HpScaleAdd)
+                if (this.plugin.Config.Scp049HpCap > hp * this.plugin.Config.Scp049HpScaleAdd)
                 {
-                    ev.Player.Health = hp * config.Scp049HpScaleAdd;
+                    ev.Player.Health = hp * this.plugin.Config.Scp049HpScaleAdd;
                 }
                 else
                 {
-                    ev.Player.Health = config.Scp049HpCap;
+                    ev.Player.Health = this.plugin.Config.Scp049HpCap;
                 }
             }
-            if (config.Allow096HPScale && ev.Player.Role == RoleType.Scp096)
+            if (this.plugin.Config.Allow096HPScale && ev.Player.Role == RoleType.Scp096)
             {
                 int hp = 0;
                 foreach (Player i in playerList)
                 {
                     hp++;
                 }
-                if (config.Scp096HpCap > hp * config.Scp096HpScaleAdd)
+                if (this.plugin.Config.Scp096HpCap > hp * this.plugin.Config.Scp096HpScaleAdd)
                 {
-                    ev.Player.Health = hp * config.Scp096HpScaleAdd;
+                    ev.Player.Health = hp * this.plugin.Config.Scp096HpScaleAdd;
                 }
                 else
                 {
-                    ev.Player.Health = config.Scp096HpCap;
+                    ev.Player.Health = this.plugin.Config.Scp096HpCap;
                 }
             }
-            if (config.Allow173HPScale && ev.Player.Role == RoleType.Scp173)
+            if (this.plugin.Config.Allow173HPScale && ev.Player.Role == RoleType.Scp173)
             {
                 int hp = 0;
                 foreach (Player i in playerList)
                 {
                     hp++;
                 }
-                if (config.Scp096HpCap > hp * config.Scp173HpScaleAdd)
+                if (this.plugin.Config.Scp096HpCap > hp * this.plugin.Config.Scp173HpScaleAdd)
                 {
-                    ev.Player.Health = hp * config.Scp173HpScaleAdd;
+                    ev.Player.Health = hp * this.plugin.Config.Scp173HpScaleAdd;
                 }
                 else
                 {
-                    ev.Player.Health = config.Scp173HpCap;
+                    ev.Player.Health = this.plugin.Config.Scp173HpCap;
                 }
             }
-            if (config.Allow106HPScale && ev.Player.Role == RoleType.Scp106)
+            if (this.plugin.Config.Allow106HPScale && ev.Player.Role == RoleType.Scp106)
             {
                 int hp = 0;
                 foreach (Player i in playerList)
                 {
                     hp++;
                 }
-                if (config.Scp106HpCap > hp * config.Scp106HpScaleAdd)
+                if (this.plugin.Config.Scp106HpCap > hp * this.plugin.Config.Scp106HpScaleAdd)
                 {
-                    ev.Player.Health = hp * config.Scp106HpScaleAdd;
+                    ev.Player.Health = hp * this.plugin.Config.Scp106HpScaleAdd;
                 }
                 else
                 {
-                    ev.Player.Health = config.Scp106HpCap;
+                    ev.Player.Health = this.plugin.Config.Scp106HpCap;
                 }
             }
-            if (config.Allow939HPScale && ev.Player.Role == RoleType.Scp93953)
+            if (this.plugin.Config.Allow939HPScale && ev.Player.Role == RoleType.Scp93953)
             {
                 int hp = 0;
                 foreach (Player i in playerList)
                 {
                     hp++;
                 }
-                if (config.Scp939sHpCap > hp * config.Scp939sHpScaleAdd)
+                if (this.plugin.Config.Scp939sHpCap > hp * this.plugin.Config.Scp939sHpScaleAdd)
                 {
-                    ev.Player.Health = hp * config.Scp939sHpScaleAdd;
+                    ev.Player.Health = hp * this.plugin.Config.Scp939sHpScaleAdd;
                 }
                 else
                 {
-                    ev.Player.Health = config.Scp939sHpCap;
+                    ev.Player.Health = this.plugin.Config.Scp939sHpCap;
                 }
             }
-            if (config.Allow939HPScale && ev.Player.Role == RoleType.Scp93989)
+            if (this.plugin.Config.Allow939HPScale && ev.Player.Role == RoleType.Scp93989)
             {
                 int hp = 0;
                 foreach (Player i in playerList)
                 {
                     hp++;
                 }
-                if (config.Scp939sHpCap > hp * config.Scp939sHpScaleAdd)
+                if (this.plugin.Config.Scp939sHpCap > hp * this.plugin.Config.Scp939sHpScaleAdd)
                 {
-                    ev.Player.Health = hp * config.Scp939sHpScaleAdd;
+                    ev.Player.Health = hp * this.plugin.Config.Scp939sHpScaleAdd;
                 }
                 else
                 {
-                    ev.Player.Health = config.Scp939sHpCap;
+                    ev.Player.Health = this.plugin.Config.Scp939sHpCap;
                 }
             }
         }
